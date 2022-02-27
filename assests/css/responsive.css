@@ -1,0 +1,128 @@
+/* Mobile & tablet */
+@media (max-width: 1023px) {
+    .hidden-on-mobile-tablet {
+        display: none;
+    }
+
+    :root {
+        --height-header: 68px;
+        --height-nav: 0px;
+        --height-search: calc(var(--height-header) - var(--height-nav)) ;
+    }
+
+    .header {
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+        top: 0;
+    }
+
+    .header__cart {
+        width: 80px;
+        text-align: right;
+    }
+
+    .header__cart-list {
+        position: fixed;
+        width: 100%;
+        top: var(--height-search);
+    }
+    
+    .header__cart-list::after {
+        display: none;
+    }
+
+    .header__cart-no-cart-img {
+        position: relative;
+        right: 35%;
+        width: 30%;
+    }
+
+    .header__cart-no-cart-msg {
+        text-align: center;
+    }
+
+    .app__container{
+        margin-top: calc(var(--height-header) + var(--height-header-sort-bar));
+    }
+
+    .header__sort-bar {
+        display: flex;
+    }
+
+    .app__content {
+        padding-top: 8px;
+    }
+    
+    .category-mobile {
+        display: block;
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .hidden-on-tablet {
+        display: none;
+    }
+
+}
+
+/* Mobile  */
+@media (max-width: 739px) {
+    .hidden-on-mobile {
+        display: none;
+    }
+
+    .header__search {
+        justify-content: space-between;
+    }
+
+    .header__logo,
+    .header__cart  {
+        width: unset;
+    }
+
+    .header-moible-search {
+        display: block;
+    }
+
+    .header__search-oh {
+        position: fixed;
+        transform: translateY(calc(100% + 12px));
+        z-index: 1;
+        height: var(--height-header-sort-bar);
+        width: 100%;
+        left: 0;
+        box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+        animation: mobileSearchSideIn linear 0.3s;
+        padding: 0 12px;
+    }
+
+    @keyframes mobileSearchSideIn {
+        from {
+            opacity: 0;
+           transform: translateY(50%);
+        }
+
+        to {    
+            opacity: 1;
+            transform: translateY(100%);
+        }
+        
+    }
+
+    .header__search-history {
+
+        position: fixed;
+        width: 100%;
+        top: 100%;
+        left: 0;
+        padding: 0 16px;
+
+    }
+
+    .app__content {
+        margin: 0 4px;
+    }
+
+}
